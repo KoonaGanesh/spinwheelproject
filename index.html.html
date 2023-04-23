@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        transition: all 5s;
+        transition-timing-function: ease;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./background1.gif");
+        background-size: 90%;
+    }
+    img{
+        width: 300px;
+        filter: drop-shadow(5px 5px 5px rgba(187, 83, 83,0.3));
+    }
+    button{
+        position: absolute;
+        right: 65px;
+        background-color: darkred;
+        border: 5px dotted yellow;
+        outline: double 10px darkred;
+        width: 450px;
+        height: 40px;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        letter-spacing: 5px;
+        transition: transform 0.5s;
+        box-shadow: 10px 10px 5px blueviolet;
+    }
+    button :hover{
+        transform: scale(1.2);
+    }
+
+   </style>
+</head>
+<body>
+    <script>
+        var image=document.createElement("img")
+        document.body.appendChild(image)
+        image.src="./spin.png"
+        var image1=document.createElement("img")
+        document.body.appendChild(image1)
+        image1.src="./arrow.png"
+        image1.style.width="120px"
+        image1.style.height="40px"
+        var but=document.createElement("button")
+        document.body.appendChild(but)
+        but.innerHTML="Lucky Spin Wheel.!!"
+        but.addEventListener("click" ,function(){
+            var randomnum=Math.random()*180;
+            image.style.rotate=`${randomnum*90}deg`
+        })
+    </script>
+</body>
+</html>
